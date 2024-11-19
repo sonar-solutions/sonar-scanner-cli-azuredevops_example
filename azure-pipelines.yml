@@ -4,7 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - sonar-scanner/src/*
 
 pool:
   vmImage: ubuntu-latest
@@ -24,6 +29,7 @@ steps:
       # Put one key=value per line, example:
       # sonar.exclusions=**/*.bin
       sonar.verbose=true
+      sonar.sources=sonar-scanner/src/*
 
 - task: SonarQubeAnalyze@7
   inputs:
