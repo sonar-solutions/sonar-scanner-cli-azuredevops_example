@@ -24,13 +24,13 @@ steps:
     scannerMode: 'cli'
     cliScannerVersion: '6.2.1.4610'
     configMode: 'file'
+    configFile: 'sonar-scanner/sonar-project.properties'
     extraProperties: |
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
       # sonar.exclusions=**/*.bin
       sonar.verbose=true
-      sonar.projectBaseDir=sonar-scanner/
-      sonar.sources=src/*
+      #sonar.projectBaseDir=sonar-scanner/
 
 - task: SonarQubeAnalyze@7
   inputs:
