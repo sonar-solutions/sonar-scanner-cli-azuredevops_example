@@ -29,6 +29,8 @@ steps:
       # Put one key=value per line, example:
       # sonar.exclusions=**/*.bin
       sonar.verbose=true
+      sonar.projectBaseDir=sonar-scanner/
+      sonar.sources=src/*
 
 - task: SonarQubeAnalyze@7
   inputs:
