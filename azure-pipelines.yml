@@ -21,7 +21,9 @@ steps:
 - script: |
     echo "Build.SourcesDirectory:"
     echo "$(Build.SourcesDirectory)"
-  displayName: 'Print Build.SourcesDirectory'
+    echo "Contents of Build.SourcesDirectory:"
+    ls -la "$(Build.SourcesDirectory)"
+  displayName: 'Print and List Contents of Build.SourcesDirectory'
 
 - task: SonarQubePrepare@7
   inputs:
