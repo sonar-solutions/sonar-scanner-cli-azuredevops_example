@@ -18,6 +18,11 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- script: |
+    echo "Build.SourcesDirectory:"
+    echo "$(Build.SourcesDirectory)"
+  displayName: 'Print Build.SourcesDirectory'
+
 - task: SonarQubePrepare@7
   inputs:
     SonarQube: 'SonarQube Server-sonar-scanner-cli-example'
