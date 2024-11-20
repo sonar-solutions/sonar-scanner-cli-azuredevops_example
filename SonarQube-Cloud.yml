@@ -1,0 +1,37 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: SonarCloudPrepare@3
+  inputs:
+    SonarQube: 'SonarQube Cloud Production-sonar-scanner-cli-example'
+    organization: 'azure-devops-onboarding-examples'
+    scannerMode: 'cli'
+    cliScannerVersion: '6.2.1.4610'
+    configMode: 'file'
+    configFile: 'sonar-scanner/sonar-project.properties'
+    extraProperties: |
+      # Additional properties that will be passed to the scanner, 
+      # Put one key=value per line, example:
+      # sonar.exclusions=**/*.bin
+      sonar.verbose=true
+      sonar.projectBaseDir=sonar-scanner/
+
+- task: SonarCloudAnalyze@3
+  inputs:
+    jdkversion: 'JAVA_HOME_17_X64'
+
+- task: SonarCloudPublish@3
+  inputs:
+    pollingTimeoutSec: '300'
