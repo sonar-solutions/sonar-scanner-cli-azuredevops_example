@@ -4,7 +4,12 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - sonar-scanner/*
 
 pool:
   vmImage: ubuntu-latest
