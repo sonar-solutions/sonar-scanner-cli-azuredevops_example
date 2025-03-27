@@ -23,7 +23,6 @@ steps:
     SonarQube: 'SonarQube Cloud Production-sonar-scanner-cli-example'
     organization: 'azure-devops-onboarding-examples'
     scannerMode: 'cli'
-    cliScannerVersion: '6.2.1.4610'
     configMode: 'file'
     configFile: 'sonar-scanner/sonar-project.properties'
     extraProperties: |
