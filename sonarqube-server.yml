@@ -29,7 +29,6 @@ steps:
   inputs:
     SonarQube: 'SonarQube Server-sonar-scanner-cli-example'
     scannerMode: 'cli'
-    cliScannerVersion: '6.2.1.4610'
     configMode: 'file'
     configFile: 'sonar-scanner/sonar-project.properties'
     extraProperties: |
