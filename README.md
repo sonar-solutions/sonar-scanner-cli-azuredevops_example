@@ -5,7 +5,6 @@ We have multiple CI/CD Pipeline examples, one for running the SonarScanner and s
 
 PLEASE READ OUR SONARQUBE DOCUMENTATION FOR WORKING WITH AZURE DEVOPS PIPELINES  
 [Azure DevOps - SonarQube Server Integration](https://docs.sonarsource.com/sonarqube-server/latest/devops-platform-integration/azure-devops-integration/)  
-[Azure DevOps Pipelines - SonarQube Cloud](https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/ci-based-analysis/azure-pipelines/)
 
 ## Important Information in Pipelines
 - Triggers are set to only execute on changes to main branch and a specific directory in the project, this can be modified with whatever you would want to specify.
